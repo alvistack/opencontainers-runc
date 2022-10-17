@@ -1,8 +1,9 @@
-vendor/pkg
+.vagrant
 /runc
 /runc-*
+Vagrantfile
 contrib/cmd/recvtty/recvtty
 man/man8
 release
-Vagrantfile
-.vagrant
+sbin
+vendor/pkg
