@@ -1,0 +1,5 @@
+cri-o-runc (100:1.4.3-1) UNRELEASED; urgency=medium
+
+  * https://github.com/opencontainers/runc/releases/tag/v1.4.3
+
+ -- Wong Hoi Sing Edison <hswong3i@pantarei-design.com>  Sat, 13 Jun 2026 22:14:00 +0800
