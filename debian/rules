@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+SHELL := /bin/bash
+
+override_dh_auto_build:
+	mkdir -p sbin
+	set -ex && \
+		export CGO_ENABLED=1 && \
+		go build \
+			-mod vendor -buildmode pie -v \
+			-ldflags "-s -w" \
+			-tags 'seccomp' \
+			-o ./sbin/runc .
+
+override_dh_auto_install:
+	install -Dpm755 -d debian/tmp/usr/lib/cri-o-runc/sbin
+	install -Dpm755 -t debian/tmp/usr/lib/cri-o-runc/sbin sbin/runc
+
+override_dh_auto_test:
+
+override_dh_auto_clean:
+
+%:
+	dh $@
